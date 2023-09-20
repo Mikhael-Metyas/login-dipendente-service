@@ -6,6 +6,8 @@ import java.util.List;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
@@ -57,6 +59,7 @@ public class Dipendente implements Serializable{
 	@Size(min = 8, max = 12)
 	private String numeroTelefonico;
 	
+	@JsonIgnore
 	@OneToMany(mappedBy = "dipendenteTecnologiaId.dipendente")
 	private List<DipendenteTecnologia> dipendenti;
 
